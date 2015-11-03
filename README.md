@@ -14,3 +14,7 @@ Rus:
 > Возможность просмотреть полную версию текста и дату его копирования или удалить ненужные элементы.
 
 Commented on russian.
+
+* * *
+# Try new Clipboard History 2
+[Install Clipboard History 2 from Google Web Store](https://chrome.google.com/webstore/detail/clipboard-history-2/ajiejmhbejpdgkkigpddefnjmgcbkenk)
