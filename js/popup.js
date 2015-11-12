@@ -1,13 +1,10 @@
-// TODO: Страница настроек. Какие настройки?
-// TODO: Локализация
 /**
- * Скрипт всплывающего окна-менеджера буфера обмена
- * Клиент-сайд (:
- * Deliaz
+ * Originally written by Deliaz
+ * Modified by @sos0
  * */
 
 $(function() {
-	// Переменные
+	// DOM variables
 	var $table =        $("#history-table"),
         $body =         $("body"),
         $wrap =         $("#wrap"),
@@ -17,25 +14,18 @@ $(function() {
         $modal =        $("#modal"),
         $modalText =    $(".full-text"),
         $modalTitle =   $(".modal-title"),
-        $modalLength =  $(".full-lenght span"),
-        $modalDialog =  $(".modal-dialog"),
+        $modalLength =  $(".full-length span"),
         $copyModal =    $("#modal-copy"),
         $deleteModal =  $("#modal-delete"),
 
         $triggerCopy    =  null,
         $triggerDelete  =  null;
 
-	/* ********************************************************* */
-	// Получаем историю буфера обмена
 	_getClipboardHistory();
-    // Обработчик на кнопку Очистить
     _btnClearOn();
-    // Обработчик на кнопку Обновить
     _btnRefreshOn();
-	/* ********************************************************* */
-	// Получаем историю буфера обмена
+
 	function _getClipboardHistory() {
-        // Таблицу будем выводить наоборот
 		var html = '',  // Сюда собираем строчку таблицы
             trArr = [], // Это массив строк таблицы, потом его перевернем
             clbObj = $.parseJSON(localStorage.clipboard);
@@ -44,18 +34,18 @@ $(function() {
             if(!val.current) {
                 html = '<tr>';
                 html += '<td class="time-ago" data-date='+val.date+'>';
-                html += '<span class="label label-default">'+moment(val.date).fromNow(true)+'</span></td>';
+                html += '<div class="ui right pointing basic label">'+moment(val.date).fromNow(true)+'</div></td>';
             } else {
                 html = '<tr class="current">';
                 html += '<td class="time-ago" data-date='+val.date+'>';
-                html += '<span class="label label-success">'+moment(val.date).fromNow(true)+'</span></td>';
+                html += '<div class="ui right pointing basic green label">'+moment(val.date).fromNow(true)+'</div></td>';
             }
-            html += '<td class="paste-text"><div>'+encodeHTML(val.text)+ '</div></td>';
+            html += '<td class="paste-text"><div class="copied">'+encodeHTML(val.text)+ '</div></td>';
 
-            html += '<td class="delete-text"><button class="btn btn-default btn-xs">' +
+            html += '<td class="delete-text"><button class="tiny basic red button">' +
                     '<span class="fa fa-times text-muted"></span></button></td>';
 
-            html += '<td class="show-text"><button class="btn btn-default btn-xs">' +
+            html += '<td class="show-text"><button class="tiny basic orange button">' +
                 '<span class="fa fa-eye text-muted"></span></button></td>';
 
             html += '<td class="count text-muted">(' +val.text.length+ ')</td>';
