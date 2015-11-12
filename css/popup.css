@@ -6,7 +6,8 @@ body {
 }
 #wrap {
 	width:600px;
-    max-height:500px;
+    height: 400px;
+    max-height:600px;
     overflow-y: scroll;
     padding: 20px;
     transition: height 0.3s linear;
@@ -64,21 +65,7 @@ td.show-text button, td.delete-text button {
     padding: 0 7px;
     font-size: 11px;
 }
-.modal-body, .modal-header {
-    padding: 10px;
-}
 .full-text {
     font-size: 12px;
     margin-bottom: 0;
-}
-#tools.btn-group>.btn {
-    padding: 0 15px;
-    font-size: 14px;
-}
-#modal-tools {
-    margin-right: 25px;
-}
-#modal-copy {
-    padding-left: 15px;
-    padding-right: 15px;
 }

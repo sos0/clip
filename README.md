@@ -1,8 +1,7 @@
-# Clipboard History
-### Extension for Google Chrome.
+# Clip
+### Extension for Google Chrome, modified from [Deliaz' Clipboard History](https://chrome.google.com/webstore/detail/clipboard-history/hmgejlbbhlgnknnnhfligmjalffljbno)
 
-[Install from Chrome Web Store](https://chrome.google.com/webstore/detail/clipboard-history/hmgejlbbhlgnknnnhfligmjalffljbno)
-
+Lightweight clipboard: keep track of your copied contents!
 
 Eng:
 > Roll back your clipboard! 
@@ -13,8 +12,6 @@ Rus:
 > Расширение сохраняет историю вашего буфера обмена. В любой момент вы можете заново скопировать текст из истории кликнув на него. 
 > Возможность просмотреть полную версию текста и дату его копирования или удалить ненужные элементы.
 
-Commented on russian.
 
 * * *
-# Try new Clipboard History 2
-[Install Clipboard History 2 from Google Web Store](https://chrome.google.com/webstore/detail/clipboard-history-2/ajiejmhbejpdgkkigpddefnjmgcbkenk)
+# Deliaz's Clipboard History 2 can be found [here](https://chrome.google.com/webstore/detail/clipboard-history-2/ajiejmhbejpdgkkigpddefnjmgcbkenk).

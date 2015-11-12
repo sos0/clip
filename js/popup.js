@@ -11,15 +11,23 @@ $(function() {
 		$btnClear =     $("#clear"),
         $btnRefresh =   $("#refresh"),
 
-        $modal =        $("#modal"),
+        $modal =        $("#modal").modal({
+            onDeny:     function(){
+                copyModalClickOn();
+            },
+            onApprove:  function(){
+                deleteModalClickOn();
+            }
+        }),
         $modalText =    $(".full-text"),
         $modalTitle =   $(".modal-title"),
         $modalLength =  $(".full-length span"),
-        $copyModal =    $("#modal-copy"),
-        $deleteModal =  $("#modal-delete"),
+        // $copyModal =    $("#modal-copy"),
+        // $deleteModal =  $("#modal-delete"),
 
         $triggerCopy    =  null,
         $triggerDelete  =  null;
+
 
 	_getClipboardHistory();
     _btnClearOn();
@@ -169,10 +177,10 @@ $(function() {
 
             $triggerCopy = $textTd;                                 // Если захотим скопировать из просмотра полной версии
             if($thisTr.hasClass('current')) {
-                $deleteModal.attr('disabled',true);
+                // $deleteModal.attr('disabled',true);
             }
             else {
-                $deleteModal.attr('disabled',false);
+                // $deleteModal.attr('disabled',false);
                 $triggerDelete = $thisTr.find("td.delete-text button"); // Если захотим удалить из просмотра полной версии
             }
 
@@ -183,7 +191,7 @@ $(function() {
             $modalTitle.text(dataDate);
             $modalLength.text(dataText.length);
 
-            $modal.modal();
+            $('#detail-modal').modal('show');
 
             // Если попапп маленький - добавляем ему высоты
             if($body.height() < 300) {
@@ -192,16 +200,16 @@ $(function() {
         });
 
         // Убираем дополнительную высоту
-        $modal.on('hide.bs.modal',function() {
-            if($body.hasClass("body-ext")) {
-                $body.removeClass("body-ext");
-            }
-        });
+        // $modal.on('hide.bs.modal',function() {
+        //     if($body.hasClass("body-ext")) {
+        //         $body.removeClass("body-ext");
+        //     }
+        // });
 
         // Запуск обработчика для кнопки Скорировать в полной версии
-        copyModalClickOn();
+        // copyModalClickOn();
         // Запуск обработчика для кнопки Удалить в полной версии
-        deleteModalClickOn();
+        // deleteModalClickOn();
     }
 
     // Обработчик на кнопку Копировать в просмотре полной версии текста
